@@ -1,15 +1,13 @@
-//Output
 process.stdout.write('prompt > ');
-require('./pwd.js');
-require('./ls.js')
 
-//The stdin 'data' event fires after a user types in a line
 process.stdin.on('data', x => {
-  x.toString().trim();
-  if (x === 'pwd') {
-    pwdFunction();
-  } else if (x === 'ls') {
-    lsFunction()
+  let item = x.toString().trim();
+  if (item === 'pwd') {
+    const pwd = require('./pwd.js');
+    pwd.pwdFunction;
+  } else if ('./ls.js') {
+    const ls = require('./ls.js');
+    ls.lsFunction;
   } else {
     process.stdout.write('You typed: ' + x.toString().trim());
     process.stdout.write('\nprompt > ');
